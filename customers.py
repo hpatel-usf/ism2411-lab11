@@ -54,3 +54,36 @@ for key, value in customer.items():
 
 for key in customer:
     print(key)
+
+
+# Exercise 5
+
+tier_discounts = {
+    "bronze": 0,
+    "silver": 0.05,
+    "gold": 0.10,
+    "platinum": 0.15
+}
+
+tier = customer["tier"]
+discount = tier_discounts.get(tier, 0)
+final_price = 200 * (1 - discount)
+
+print("Tier:", tier)
+print("Discount:", f"{discount:.0%}")
+print("Final price:", f"${final_price:.2f}")
+
+
+# Exercise 6
+
+customers = [
+    {"name": "Alice", "tier": "platinum"},
+    {"name": "Bob", "tier": "silver"},
+    {"name": "Charlie", "tier": "bronze"}
+]
+
+for person in customers:
+    tier = person["tier"]
+    discount = tier_discounts.get(tier, 0)
+    discount_amount = 300 * discount
+    print(f"{person['name']}: {tier}, discount ${discount_amount:.2f}")
