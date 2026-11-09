@@ -33,3 +33,24 @@ print(customer)
 
 del customer["email"]
 print(customer)
+
+
+# Exercise 3
+
+print(customer.get("email", "no email on file"))
+
+try:
+    print(customer["email"])
+except KeyError:
+    print("KeyError: email not found")
+
+
+
+# Exercise 4
+
+for key, value in customer.items():
+    print(f"{key}: {value}")
+
+
+for key in customer:
+    print(key)
